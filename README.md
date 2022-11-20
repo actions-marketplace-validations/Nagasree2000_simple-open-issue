@@ -4,15 +4,15 @@
   <a href="https://github.com/actions/javascript-action/actions"><img alt="javscript-action status" src="https://github.com/actions/javascript-action/workflows/units-test/badge.svg"></a>
 </p>
 
-Use this template to bootstrap the creation of a JavaScript action.:rocket:
+Use this template to bootstrap the creation of a JavaScript action.:for creating a issue
 
 This template includes tests, linting, a validation workflow, publishing, and versioning guidance.
 
-If you are new, there's also a simpler introduction.  See the [Hello World JavaScript Action](https://github.com/actions/hello-world-javascript-action)
+
 
 ## Create an action from this template
 
-Click the `Use this Template` and provide the new repo details for your action
+U can use this template for creation of new issue in your github repositories and also for creation of relevant java script files.
 
 ## Code in Main
 
@@ -38,7 +38,16 @@ $ npm test
 
 The action.yml defines the inputs and output for your action.
 
-Update the action.yml with your name, description, inputs and outputs for your action.
+Update the action.yml with 
+
+`token: which is used for authentication purpose
+`
+`title: which is used as a title for your issue creation
+`
+`body: which is used as a body for your issue creation
+`
+`assignees: Are the persons you want to assign to your issue
+`
 
 See the [documentation](https://help.github.com/en/articles/metadata-syntax-for-github-actions)
 
@@ -47,7 +56,9 @@ See the [documentation](https://help.github.com/en/articles/metadata-syntax-for-
 Most toolkit and CI/CD operations involve async operations so the action is run in an async function.
 
 ```javascript
-const core = require('@actions/core');
+const core = require("@actions/core");
+const github = require("@actions/github");
+const { Octokit } = require("@octokit/rest");
 ...
 
 async function run() {
@@ -108,9 +119,12 @@ See the [versioning documentation](https://github.com/actions/toolkit/blob/maste
 You can now consume the action by referencing the v1 branch
 
 ```yaml
-uses: actions/javascript-action@v1
+uses: Nagasree2000/actions/simple-issue@v1
 with:
-  milliseconds: 1000
+  token: {{ secrets.GITHUB_TOKEN }}
+  title: Your title
+  body: Your body
+  assignees: Your assignees
 ```
 
 See the [actions tab](https://github.com/actions/javascript-action/actions) for runs of this action! :rocket:
