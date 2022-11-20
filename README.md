@@ -119,12 +119,14 @@ See the [versioning documentation](https://github.com/actions/toolkit/blob/maste
 You can now consume the action by referencing the v1 branch
 
 ```yaml
-uses: Nagasree2000/actions/simple-issue@v1
+uses: Nagasree2000/Open-Issue@v1
 with:
   token: {{ secrets.GITHUB_TOKEN }}
-  title: Your title
-  body: Your body
-  assignees: Your assignees
+  title: Issue creation
+  body: Body of issue
+  assignees: |
+    Nagasree2000
+    Nagasree1976
 ```
 
 ## Output
