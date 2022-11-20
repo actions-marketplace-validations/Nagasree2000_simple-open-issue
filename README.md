@@ -127,4 +127,14 @@ with:
   assignees: Your assignees
 ```
 
+## Output
+```yaml
+uses: Nagasree2000/actions/simple-issue@v1
+outputs:
+  issue: # id of output
+    description: "The issue description"
+```
+
+
+
 See the [actions tab](https://github.com/actions/javascript-action/actions) for runs of this action! :rocket:
